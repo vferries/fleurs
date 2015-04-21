@@ -1,0 +1,12 @@
+{
+  "name": "fleurs",
+  "app_id": "com.moonra.fleurs",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}
