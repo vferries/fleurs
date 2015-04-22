@@ -84,6 +84,14 @@ angular.module('starter.controllers', [])
     };
 })
 
+.controller('LoginCtrl', function($scope, $timeout, $stateParams) {
+    $scope.$parent.clearFabs();
+    $timeout(function() {
+        $scope.$parent.hideHeader();
+    }, 0);
+    ionic.material.ink.displayEffect();
+})
+
 .controller('CategoriesCtrl', function($scope, $timeout, $stateParams, Fleurs) {
     $scope.categories = Fleurs.all();
 
@@ -105,34 +113,10 @@ angular.module('starter.controllers', [])
     ionic.material.ink.displayEffect();    
 })
 
-.controller('LoginCtrl', function($scope, $timeout, $stateParams) {
-    $scope.$parent.clearFabs();
-    $timeout(function() {
-        $scope.$parent.hideHeader();
-    }, 0);
-    ionic.material.ink.displayEffect();
-})
+.controller('ProfileCtrl', function($scope, $stateParams, $timeout, Fleurs) {
+    var name = $stateParams.categoryName;
+    $scope.category = Fleurs.get(name);
 
-.controller('FriendsCtrl', function($scope, $stateParams, $timeout) {
-    // Set Header
-    $scope.$parent.showHeader();
-    $scope.$parent.clearFabs();
-    $scope.$parent.setHeaderFab('left');
-
-    // Delay expansion
-    $timeout(function() {
-        $scope.isExpanded = true;
-        $scope.$parent.setExpanded(true);
-    }, 300);
-
-    // Set Motion
-    ionic.material.motion.fadeSlideInRight();
-
-    // Set Ink
-    ionic.material.ink.displayEffect();
-})
-
-.controller('ProfileCtrl', function($scope, $stateParams, $timeout) {
     // Set Header
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();

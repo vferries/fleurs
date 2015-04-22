@@ -55,6 +55,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
     })
 
+    .state('app.category', {
+        url: '/category',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/category.html',
+                controller: 'CategoryCtrl'
+            },
+            'fabContent': {
+                template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-balanced-500"><i class="icon ion-plus"></i></button>',
+                controller: function ($timeout) {
+                    /*$timeout(function () {
+                        document.getElementById('fab-profile').classList.toggle('on');
+                    }, 800);*/
+                }
+            }
+        }
+    })
+
     .state('app.activity', {
         url: '/activity',
         views: {
@@ -68,24 +86,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                     $timeout(function () {
                         document.getElementById('fab-activity').classList.toggle('on');
                     }, 200);
-                }
-            }
-        }
-    })
-
-    .state('app.friends', {
-        url: '/friends',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/friends.html',
-                controller: 'FriendsCtrl'
-            },
-            'fabContent': {
-                template: '<button id="fab-friends" class="button button-fab button-fab-top-left expanded button-balanced spin"><i class="icon ion-chatbubbles"></i></button>',
-                controller: function ($timeout) {
-                    $timeout(function () {
-                        document.getElementById('fab-friends').classList.toggle('on');
-                    }, 900);
                 }
             }
         }
