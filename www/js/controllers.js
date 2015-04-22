@@ -99,9 +99,7 @@ angular.module('starter.controllers', [])
     }, 300);
 
     // Set Motion
-    $timeout(function() {
-        ionic.material.motion.fadeSlideInRight();
-    }, 100);
+    ionic.material.motion.fadeSlideInRight();
 
     // Set Ink
     ionic.material.ink.displayEffect();    
