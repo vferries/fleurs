@@ -1,7 +1,7 @@
 <ion-view view-title="Catégories">
     <ion-content ng-class="{expanded:isExpanded}">
         <ion-list class="content has-header list">
-          <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="category in categories" type="item-text-wrap" href="#/tab/category/{{category.name}}">
+          <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="category in categories" type="item-text-wrap" href="#/app/category/{{category.id}}">
             <img ng-src="{{category.img}}">
             <h2>{{category.name}}</h2>
             <p>{{category.summary}}</p>

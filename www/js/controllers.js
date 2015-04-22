@@ -106,16 +106,17 @@ angular.module('starter.controllers', [])
         $scope.$parent.setExpanded(true);
     }, 300);
 
+    //FIXME
     // Set Motion
-    ionic.material.motion.fadeSlideInRight();
+    //ionic.material.motion.fadeSlideInRight();
 
     // Set Ink
     ionic.material.ink.displayEffect();    
 })
 
-.controller('ProfileCtrl', function($scope, $stateParams, $timeout, Fleurs) {
-    var name = $stateParams.categoryName;
-    $scope.category = Fleurs.get(name);
+.controller('CategoryCtrl', function($scope, $stateParams, $timeout, Fleurs) {
+    var id = $stateParams.categoryId;
+    $scope.category = Fleurs.get(id);
 
     // Set Header
     $scope.$parent.showHeader();

@@ -56,7 +56,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     })
 
     .state('app.category', {
-        url: '/category',
+        url: '/category/:categoryId',
         views: {
             'menuContent': {
                 templateUrl: 'templates/category.html',
